@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="黒田 慶一 | KURODA ESTATE GROUP 代表 | オフィス・テナント・ビル管理のプロフェッショナル">
+    <title>KURODA ESTATE GROUP | 黒田 慶一</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- Opening Animation -->
+    <div id="opening" class="opening">
+        <div class="op-bg"></div>
+        <div class="op-h-line"></div>
+        <div class="op-buildings">
+            <div class="op-building b1"></div>
+            <div class="op-building b2"></div>
+            <div class="op-building b3"></div>
+            <div class="op-building b4"></div>
+            <div class="op-building b5"></div>
+        </div>
+        <div class="op-brand">
+            <div class="op-name">黒田 慶一</div>
+            <div class="op-en">KURODA ESTATE GROUP</div>
+            <div class="op-tagline">空間が、資産になる。</div>
+        </div>
+        <div class="op-skip" id="op-skip">SKIP</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-brand">K.E.G</a>
+        <ul class="nav-links">
+            <li><a href="#about">代表</a></li>
+            <li><a href="#services">サービス</a></li>
+            <li><a href="#track">得意領域</a></li>
+            <li><a href="#contact" class="nav-cta">相談する</a></li>
+        </ul>
+        <button class="nav-burger" id="nav-burger" aria-label="メニュー">
+            <span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-close" id="mobile-close">✕</button>
+        <ul>
+            <li><a href="#about">代表</a></li>
+            <li><a href="#services">サービス</a></li>
+            <li><a href="#track">得意領域</a></li>
+            <li><a href="#contact">相談する</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="hero-particles"></div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <p class="hero-eyebrow" data-reveal>不動産グループ代表</p>
+                <h1 class="hero-h1">
+                    <span class="h1-line" data-reveal data-delay="0.15">空間を、</span>
+                    <span class="h1-line" data-reveal data-delay="0.3">資産へ。</span>
+                </h1>
+                <p class="hero-name" data-reveal data-delay="0.45">黒田 慶一</p>
+                <div class="hero-actions" data-reveal data-delay="0.6">
+                    <a href="#contact" class="btn-primary">相談する</a>
+                    <a href="#about" class="btn-ghost">代表を知る</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-skyline" id="hero-skyline">
+                    <svg class="skyline-svg" viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Center tall building -->
+                        <rect x="165" y="70" width="90" height="450" stroke="#C4922A" stroke-width="1.2" opacity="0.9"/>
+                        <rect x="175" y="90" width="14" height="20" fill="#C4922A" opacity="0.25"/>
+                        <rect x="197" y="90" width="14" height="20" fill="#C4922A" opacity="0.45"/>
+                        <rect x="220" y="90" width="14" height="20" fill="#C4922A" opacity="0.3"/>
+                        <rect x="175" y="122" width="14" height="20" fill="#C4922A" opacity="0.5"/>
+                        <rect x="197" y="122" width="14" height="20" fill="#C4922A" opacity="0.2"/>
+                        <rect x="220" y="122" width="14" height="20" fill="#C4922A" opacity="0.6"/>
+                        <rect x="175" y="154" width="14" height="20" fill="#C4922A" opacity="0.35"/>
+                        <rect x="197" y="154" width="14" height="20" fill="#C4922A" opacity="0.7"/>
+                        <rect x="220" y="154" width="14" height="20" fill="#C4922A" opacity="0.25"/>
+                        <rect x="175" y="186" width="14" height="20" fill="#C4922A" opacity="0.6"/>
+                        <rect x="197" y="186" width="14" height="20" fill="#C4922A" opacity="0.3"/>
+                        <rect x="220" y="186" width="14" height="20" fill="#C4922A" opacity="0.5"/>
+                        <rect x="175" y="218" width="14" height="20" fill="#C4922A" opacity="0.2"/>
+                        <rect x="197" y="218" width="14" height="20" fill="#C4922A" opacity="0.8"/>
+                        <rect x="220" y="218" width="14" height="20" fill="#C4922A" opacity="0.4"/>
+                        <rect x="175" y="250" width="14" height="20" fill="#C4922A" opacity="0.5"/>
+                        <rect x="197" y="250" width="14" height="20" fill="#C4922A" opacity="0.3"/>
+                        <rect x="220" y="250" width="14" height="20" fill="#C4922A" opacity="0.65"/>
+                        <!-- Left building -->
+                        <rect x="60" y="170" width="80" height="350" stroke="#C4922A" stroke-width="1" opacity="0.55"/>
+                        <rect x="72" y="190" width="12" height="17" fill="#C4922A" opacity="0.3"/>
+                        <rect x="92" y="190" width="12" height="17" fill="#C4922A" opacity="0.5"/>
+                        <rect x="112" y="190" width="12" height="17" fill="#C4922A" opacity="0.2"/>
+                        <rect x="72" y="218" width="12" height="17" fill="#C4922A" opacity="0.4"/>
+                        <rect x="92" y="218" width="12" height="17" fill="#C4922A" opacity="0.25"/>
+                        <rect x="112" y="218" width="12" height="17" fill="#C4922A" opacity="0.6"/>
+                        <rect x="72" y="246" width="12" height="17" fill="#C4922A" opacity="0.2"/>
+                        <rect x="92" y="246" width="12" height="17" fill="#C4922A" opacity="0.45"/>
+                        <rect x="112" y="246" width="12" height="17" fill="#C4922A" opacity="0.35"/>
+                        <!-- Right building -->
+                        <rect x="280" y="140" width="80" height="380" stroke="#C4922A" stroke-width="1" opacity="0.55"/>
+                        <rect x="292" y="160" width="12" height="17" fill="#C4922A" opacity="0.4"/>
+                        <rect x="312" y="160" width="12" height="17" fill="#C4922A" opacity="0.2"/>
+                        <rect x="332" y="160" width="12" height="17" fill="#C4922A" opacity="0.55"/>
+                        <rect x="292" y="188" width="12" height="17" fill="#C4922A" opacity="0.3"/>
+                        <rect x="312" y="188" width="12" height="17" fill="#C4922A" opacity="0.5"/>
+                        <rect x="332" y="188" width="12" height="17" fill="#C4922A" opacity="0.35"/>
+                        <rect x="292" y="216" width="12" height="17" fill="#C4922A" opacity="0.6"/>
+                        <rect x="312" y="216" width="12" height="17" fill="#C4922A" opacity="0.25"/>
+                        <rect x="332" y="216" width="12" height="17" fill="#C4922A" opacity="0.5"/>
+                        <!-- Far left building -->
+                        <rect x="0" y="270" width="46" height="250" stroke="#C4922A" stroke-width="0.6" opacity="0.3"/>
+                        <!-- Far right building -->
+                        <rect x="374" y="250" width="46" height="270" stroke="#C4922A" stroke-width="0.6" opacity="0.3"/>
+                        <!-- Antenna -->
+                        <line x1="210" y1="70" x2="210" y2="30" stroke="#C4922A" stroke-width="1.2" opacity="0.9"/>
+                        <circle cx="210" cy="28" r="3.5" fill="#C4922A" opacity="0.9"/>
+                        <circle cx="210" cy="28" r="7" stroke="#C4922A" stroke-width="0.5" opacity="0.4"/>
+                        <!-- Ground line -->
+                        <line x1="0" y1="520" x2="420" y2="520" stroke="#C4922A" stroke-width="1" opacity="0.6"/>
+                        <!-- Ground reflection -->
+                        <line x1="40" y1="520" x2="380" y2="520" stroke="#C4922A" stroke-width="0.3" opacity="0.3"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span>OFFICE</span><span class="mdot">·</span>
+            <span>TENANT</span><span class="mdot">·</span>
+            <span>BUILDING</span><span class="mdot">·</span>
+            <span>ESTATE</span><span class="mdot">·</span>
+            <span>ASSET</span><span class="mdot">·</span>
+            <span>MANAGEMENT</span><span class="mdot">·</span>
+            <span>OFFICE</span><span class="mdot">·</span>
+            <span>TENANT</span><span class="mdot">·</span>
+            <span>BUILDING</span><span class="mdot">·</span>
+            <span>ESTATE</span><span class="mdot">·</span>
+            <span>ASSET</span><span class="mdot">·</span>
+            <span>MANAGEMENT</span><span class="mdot">·</span>
+        </div>
+    </div>
+
+    <!-- Section 01: About (Zigzag Left) -->
+    <section class="zz-section zz-left" id="about">
+        <div class="zz-visual zz-visual-about">
+            <div class="about-frame">
+                <div class="about-avatar">K</div>
+                <div class="about-frame-deco"></div>
+                <div class="about-frame-deco2"></div>
+            </div>
+        </div>
+        <div class="zz-content">
+            <span class="section-num">01</span>
+            <h2 class="zz-title">代表について</h2>
+            <p class="zz-lead">不動産の「本質」を、<br>問い直し続ける。</p>
+            <div class="zz-body">
+                <p>黒田 慶一。大阪を拠点に、オフィスビル・商業テナントを専門とする不動産グループの代表。</p>
+                <p>20年以上にわたり、都市の空間が持つポテンシャルと向き合い続けてきました。単なる仲介にとどまらず、テナントの事業成長まで見据えた「場」のプロデュースを行っています。</p>
+            </div>
+            <div class="zz-tags">
+                <span>オフィス仲介</span>
+                <span>テナント誘致</span>
+                <span>ビル管理</span>
+                <span>資産運用</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item" data-count="520">
+                <div class="stat-num"><span class="count">0</span><span class="stat-unit">件+</span></div>
+                <div class="stat-label">累計成約実績</div>
+            </div>
+            <div class="stat-item" data-count="20">
+                <div class="stat-num"><span class="count">0</span><span class="stat-unit">年+</span></div>
+                <div class="stat-label">業界経験</div>
+            </div>
+            <div class="stat-item" data-count="95">
+                <div class="stat-num"><span class="count">0</span><span class="stat-unit">%</span></div>
+                <div class="stat-label">顧客満足度</div>
+            </div>
+            <div class="stat-item" data-count="180">
+                <div class="stat-num"><span class="count">0</span><span class="stat-unit">棟+</span></div>
+                <div class="stat-label">管理物件数</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 02: Services (Zigzag Right) -->
+    <section class="zz-section zz-right" id="services">
+        <div class="zz-content">
+            <span class="section-num">02</span>
+            <h2 class="zz-title">サービス</h2>
+            <p class="zz-lead">4つの軸で、<br>不動産の可能性を拓く。</p>
+            <div class="service-list">
+                <div class="sv-item">
+                    <div class="sv-icon">
+                        <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="10" width="24" height="28" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="16" width="6" height="6" stroke="currentColor" stroke-width="1"/><rect x="22" y="16" width="6" height="6" stroke="currentColor" stroke-width="1"/><rect x="13" y="26" width="6" height="6" stroke="currentColor" stroke-width="1"/><rect x="22" y="26" width="6" height="6" stroke="currentColor" stroke-width="1"/></svg>
+                    </div>
+                    <div class="sv-text">
+                        <strong>オフィス仲介</strong>
+                        <p>企業の成長フェーズに合わせた最適なオフィス空間をご提案</p>
+                    </div>
+                </div>
+                <div class="sv-item">
+                    <div class="sv-icon">
+                        <svg viewBox="0 0 40 40" fill="none"><path d="M8 34V16l12-9 12 9v18H8Z" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="22" width="8" height="12" stroke="currentColor" stroke-width="1"/></svg>
+                    </div>
+                    <div class="sv-text">
+                        <strong>テナント誘致</strong>
+                        <p>ビルオーナー様の収益最大化を目指し、最適なテナントをマッチング</p>
+                    </div>
+                </div>
+                <div class="sv-item">
+                    <div class="sv-icon">
+                        <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="18" width="32" height="18" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="8" width="20" height="12" stroke="currentColor" stroke-width="1.5"/><line x1="20" y1="8" x2="20" y2="4" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </div>
+                    <div class="sv-text">
+                        <strong>ビル管理</strong>
+                        <p>設備管理から入居者対応まで、資産価値を守るトータル管理</p>
+                    </div>
+                </div>
+                <div class="sv-item">
+                    <div class="sv-icon">
+                        <svg viewBox="0 0 40 40" fill="none"><polyline points="6,32 14,20 22,26 34,10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="10" r="3" fill="currentColor" opacity="0.8"/></svg>
+                    </div>
+                    <div class="sv-text">
+                        <strong>資産運用コンサル</strong>
+                        <p>不動産を核とした長期的な資産形成・ポートフォリオ戦略</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zz-visual zz-visual-services">
+            <div class="geo-wrap">
+                <div class="geo g1"></div>
+                <div class="geo g2"></div>
+                <div class="geo g3"></div>
+                <div class="geo-dots">
+                    <div></div><div></div><div></div>
+                    <div></div><div></div><div></div>
+                    <div></div><div></div><div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 03: Horizontal scroll —- 得意領域 -->
+    <section class="h-scroll-wrap" id="track">
+        <div class="h-scroll-sticky">
+            <div class="h-scroll-header">
+                <span class="section-num">03</span>
+                <h2>得意領域</h2>
+                <p class="h-scroll-hint">← スワイプ / ドラッグ →</p>
+            </div>
+            <div class="h-scroll-cards" id="h-cards">
+                <div class="h-card">
+                    <div class="h-card-num">001</div>
+                    <h3>大型オフィスビル</h3>
+                    <p>都心の1,000坪超テナント誘致から竣工後の安定運営まで一貫サポート</p>
+                    <div class="h-card-tag">OFFICE BUILDING</div>
+                </div>
+                <div class="h-card">
+                    <div class="h-card-num">002</div>
+                    <h3>商業テナント</h3>
+                    <p>路面店舗・SC・複合施設への出店支援。立地分析から開業後フォローまで</p>
+                    <div class="h-card-tag">COMMERCIAL</div>
+                </div>
+                <div class="h-card">
+                    <div class="h-card-num">003</div>
+                    <h3>ビルリノベーション</h3>
+                    <p>老朽化物件を収益性の高い空間へ転換するリポジショニング戦略</p>
+                    <div class="h-card-tag">RENOVATION</div>
+                </div>
+                <div class="h-card">
+                    <div class="h-card-num">004</div>
+                    <h3>不動産M&A</h3>
+                    <p>収益物件の売買・法人間の不動産取引のアドバイザリーサービス</p>
+                    <div class="h-card-tag">M&amp;A</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 04: Philosophy (Zigzag Left) -->
+    <section class="zz-section zz-left">
+        <div class="zz-visual zz-visual-philosophy">
+            <div class="ph-wrap">
+                <div class="ph-quote-mark">&ldquo;</div>
+                <div class="ph-lines">
+                    <div class="ph-line"></div>
+                    <div class="ph-line"></div>
+                    <div class="ph-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="zz-content">
+            <span class="section-num">04</span>
+            <h2 class="zz-title">フィロソフィー</h2>
+            <blockquote class="zz-quote">
+                「不動産は、人の暮らしと<br>ビジネスの根幹を支える<br>インフラである。」
+            </blockquote>
+            <p class="zz-body-text">
+                物件を売ることではなく、そこで生まれる「価値」を創ることを大切にしています。オーナーと入居者、双方が長期的に豊かであり続けるための関係構築が、私たちの仕事の本質です。
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="contact-bg-deco">
+            <svg viewBox="0 0 240 480" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <rect x="10" y="80" width="50" height="400" stroke="#C4922A" stroke-width="0.6" opacity="0.35"/>
+                <rect x="72" y="20" width="50" height="460" stroke="#C4922A" stroke-width="0.6" opacity="0.35"/>
+                <rect x="134" y="100" width="50" height="380" stroke="#C4922A" stroke-width="0.6" opacity="0.35"/>
+                <rect x="192" y="50" width="40" height="430" stroke="#C4922A" stroke-width="0.6" opacity="0.35"/>
+            </svg>
+        </div>
+        <div class="contact-inner">
+            <span class="section-num">05</span>
+            <h2 class="contact-title">まず、話してみませんか。</h2>
+            <p class="contact-sub">物件探し、テナント誘致、管理のご相談。<br>どんな小さなことでもお気軽にどうぞ。</p>
+            <div class="contact-actions">
+                <a href="https://line.me/ti/p/PLACEHOLDER" target="_blank" rel="noopener noreferrer" class="cta-line">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                    LINEで相談する
+                </a>
+                <a href="mailto:info@kuroda-estate.jp" class="cta-email">メールで問い合わせる</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">KURODA ESTATE GROUP</div>
+                <div class="footer-name">黒田 慶一</div>
+            </div>
+            <div class="footer-info">
+                <p>不動産グループ代表</p>
+                <p>大阪府大阪市中央区</p>
+                <a href="mailto:info@kuroda-estate.jp">info@kuroda-estate.jp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2025 Kuroda Estate Group. All rights reserved.</div>
+    </footer>
+
+    <!-- Floating LINE -->
+    <a href="https://line.me/ti/p/PLACEHOLDER" target="_blank" rel="noopener noreferrer" class="float-line" id="float-line">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
