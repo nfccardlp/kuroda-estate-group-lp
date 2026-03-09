@@ -10,7 +10,7 @@ function closeOpening() {
     opening.style.display = 'none';
     document.getElementById('nav').classList.add('visible');
     revealHero();
-    initFloatLine();
+    initFloatCta();
   }, 900);
 }
 
@@ -58,33 +58,41 @@ document.querySelectorAll('a, button').forEach(el => {
 });
 
 /* =====================
-   Hero Particles
+   Hero Particles (data-flow style)
    ===================== */
 (function createParticles() {
   const container = document.getElementById('hero-particles');
   if (!container) return;
   const style = document.createElement('style');
   style.textContent = `
-    @keyframes pFloat {
+    @keyframes dataFloat {
       0%   { transform: translateY(0) translateX(0);   opacity: 0; }
-      15%  { opacity: 1; }
-      85%  { opacity: 0.4; }
-      100% { transform: translateY(-110px) translateX(18px); opacity: 0; }
+      10%  { opacity: 0.8; }
+      90%  { opacity: 0.3; }
+      100% { transform: translateY(-130px) translateX(24px); opacity: 0; }
+    }
+    @keyframes dataFloat2 {
+      0%   { transform: translateY(0) translateX(0);   opacity: 0; }
+      10%  { opacity: 0.6; }
+      90%  { opacity: 0.2; }
+      100% { transform: translateY(-90px) translateX(-18px); opacity: 0; }
     }
   `;
   document.head.appendChild(style);
-  for (let i = 0; i < 35; i++) {
+  for (let i = 0; i < 40; i++) {
     const p = document.createElement('div');
-    const size = Math.random() * 2.5 + 1;
+    const size = Math.random() * 2.5 + 0.8;
+    const isSquare = Math.random() > 0.6;
+    const animName = Math.random() > 0.5 ? 'dataFloat' : 'dataFloat2';
     p.style.cssText = [
       'position:absolute',
       `width:${size}px`,
       `height:${size}px`,
-      `background:rgba(196,146,42,${(Math.random() * 0.4 + 0.08).toFixed(2)})`,
-      'border-radius:50%',
+      `background:rgba(0,212,255,${(Math.random() * 0.5 + 0.1).toFixed(2)})`,
+      isSquare ? 'border-radius:1px' : 'border-radius:50%',
       `left:${(Math.random() * 100).toFixed(1)}%`,
       `top:${(Math.random() * 100).toFixed(1)}%`,
-      `animation:pFloat ${(Math.random() * 9 + 5).toFixed(1)}s ease-in-out ${(Math.random() * 5).toFixed(1)}s infinite`,
+      `animation:${animName} ${(Math.random() * 10 + 5).toFixed(1)}s ease-in-out ${(Math.random() * 6).toFixed(1)}s infinite`,
       'pointer-events:none'
     ].join(';');
     container.appendChild(p);
@@ -173,10 +181,10 @@ if (mobileMenu) {
 }
 
 /* =====================
-   Floating LINE
+   Floating CTA
    ===================== */
-function initFloatLine() {
-  const btn = document.getElementById('float-line');
+function initFloatCta() {
+  const btn = document.getElementById('float-cta');
   if (!btn) return;
   window.addEventListener('scroll', () => {
     btn.classList.toggle('visible', window.scrollY > 320);
@@ -184,12 +192,12 @@ function initFloatLine() {
 }
 
 /* =====================
-   Skyline Parallax
+   Neural Network Parallax
    ===================== */
-const skyline = document.getElementById('hero-skyline');
-if (skyline) {
+const heroVisual = document.getElementById('hero-visual');
+if (heroVisual) {
   window.addEventListener('scroll', () => {
-    skyline.style.transform = `translateY(${window.scrollY * 0.12}px)`;
+    heroVisual.style.transform = `translateY(${window.scrollY * 0.08}px)`;
   }, { passive: true });
 }
 
@@ -205,3 +213,39 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+/* =====================
+   Typing effect for tagline (optional enhancement)
+   ===================== */
+(function typeEffect() {
+  const tagline = document.querySelector('.op-tagline');
+  if (!tagline) return;
+  const text = tagline.textContent;
+  tagline.textContent = '';
+  tagline.style.opacity = '1';
+  tagline.style.transform = 'translateY(0)';
+  tagline.style.animation = 'none';
+
+  let i = 0;
+  const timer = setInterval(() => {
+    if (i >= text.length) {
+      clearInterval(timer);
+      return;
+    }
+    tagline.textContent += text[i];
+    i++;
+  }, 80);
+
+  // Delay start to sync with opening animation
+  tagline.textContent = '';
+  setTimeout(() => {
+    const t2 = setInterval(() => {
+      if (i >= text.length) {
+        clearInterval(t2);
+        return;
+      }
+      tagline.textContent += text[i];
+      i++;
+    }, 80);
+  }, 1900);
+})();
