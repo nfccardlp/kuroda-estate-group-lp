@@ -79,16 +79,22 @@ document.querySelectorAll('a, button').forEach(el => {
     }
   `;
   document.head.appendChild(style);
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 50; i++) {
     const p = document.createElement('div');
     const size = Math.random() * 2.5 + 0.8;
     const isSquare = Math.random() > 0.6;
     const animName = Math.random() > 0.5 ? 'dataFloat' : 'dataFloat2';
+    // Mix cyan and purple particles
+    const colors = [
+      'rgba(0,212,255,',
+      'rgba(123,97,255,',
+    ];
+    const color = colors[Math.floor(Math.random() * colors.length)];
     p.style.cssText = [
       'position:absolute',
       `width:${size}px`,
       `height:${size}px`,
-      `background:rgba(0,212,255,${(Math.random() * 0.5 + 0.1).toFixed(2)})`,
+      `background:${color}${(Math.random() * 0.5 + 0.1).toFixed(2)})`,
       isSquare ? 'border-radius:1px' : 'border-radius:50%',
       `left:${(Math.random() * 100).toFixed(1)}%`,
       `top:${(Math.random() * 100).toFixed(1)}%`,
@@ -111,7 +117,7 @@ const revealObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.14 });
 
-document.querySelectorAll('.zz-content, .stat-item').forEach(el => revealObs.observe(el));
+document.querySelectorAll('.zz-content, .stat-item, .reveal-up').forEach(el => revealObs.observe(el));
 
 /* =====================
    Counter Animation
@@ -215,7 +221,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* =====================
-   Typing effect for tagline (optional enhancement)
+   Typing effect for tagline
    ===================== */
 (function typeEffect() {
   const tagline = document.querySelector('.op-tagline');
@@ -248,4 +254,59 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       i++;
     }, 80);
   }, 1900);
+})();
+
+/* =====================
+   Card Spotlight Effect (mouse-tracking glow)
+   ===================== */
+function initCardSpotlight() {
+  const cards = document.querySelectorAll('.h-card, .phil-card, .sv-item');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', x + 'px');
+      card.style.setProperty('--mouse-y', y + 'px');
+    });
+  });
+}
+initCardSpotlight();
+
+/* =====================
+   3D Tilt Effect on Cards
+   ===================== */
+function initTiltEffect() {
+  if (window.innerWidth < 960) return;
+  const cards = document.querySelectorAll('.h-card, .phil-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const tiltX = (y - 0.5) * 8; // max 4deg
+      const tiltY = (x - 0.5) * -8;
+      card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+initTiltEffect();
+
+/* =====================
+   Parallax Aurora Blobs on Scroll
+   ===================== */
+(function auroraParallax() {
+  const blobs = document.querySelectorAll('.aurora-blob');
+  if (!blobs.length) return;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    blobs[0].style.transform = `translate(${Math.sin(y * 0.001) * 40}px, ${y * 0.05}px) scale(1)`;
+    blobs[1].style.transform = `translate(${Math.cos(y * 0.001) * -30}px, ${y * 0.03}px) scale(1)`;
+    if (blobs[2]) {
+      blobs[2].style.transform = `translate(${Math.sin(y * 0.0015) * 25}px, ${y * -0.02}px) scale(1)`;
+    }
+  }, { passive: true });
 })();
